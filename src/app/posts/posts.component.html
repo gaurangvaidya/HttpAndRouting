@@ -1,0 +1,11 @@
+
+<button (click)="getPosts()">Fetch Posts</button>
+
+
+<div *ngFor="let post of postsArray">
+
+    <h2>{{post.title}}</h2>
+    <br>
+    <p>{{post.body}}</p>
+
+</div>
