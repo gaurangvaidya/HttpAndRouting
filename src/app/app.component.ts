@@ -8,9 +8,12 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
+  isUnsaved:boolean = true;
+
   constructor(private router:Router){}
   title = 'httpandroutes';
 
+  id=20;
 
   goToSecond()
   {
@@ -22,6 +25,10 @@ export class AppComponent {
 
   goToPost()
   {
-    this.router.navigateByUrl('/post').then(e=>console.log(e));
+    this.id = 30;
+    
+    this.router.navigate(['/second',this.id]);
+    // this.router.navigateByUrl('/post').then(e=>console.log(e));
+
   }
 }

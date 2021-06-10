@@ -1,0 +1,48 @@
+
+
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+
+        <div class="container">
+            <div class="row">
+                <label class="form-label" for="username">Username</label>
+                <input 
+                class="form-control" 
+                id="username" 
+                name="username" 
+                type="text"
+                ngModel
+                #username="ngModel"
+                pattern="^[A-Za-z]+$"
+                required>
+            </div>
+
+            <div class="row">
+                <label class="form-label" for="password">Password</label>
+                <input
+                class="form-control"
+                id="password"
+                name="password"
+                type="password"
+                ngModel
+                #password="ngModel"
+                pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                required>
+
+            </div>
+
+            <br>
+            <div class="row">
+                <button
+                type="submit"
+                name="Submit"
+                class="btn btn-primary"
+                [disabled]="!f.valid||f.untouched">Submit</button>
+               
+            </div>
+        </div>
+
+        
+
+
+    </form> 
+

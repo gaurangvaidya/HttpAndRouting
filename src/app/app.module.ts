@@ -14,6 +14,10 @@ import { PostService } from './post.service';
 import { SpinnerHttpInterceptor } from './httpinterceptor';
 import { SecondComponentComponent } from './second-component/second-component.component';
 import { PostAndSpinnerComponent } from './post-and-spinner/post-and-spinner.component';
+import { SecondaComponent } from './seconda/seconda.component';
+import { ChildModule } from './child/child.module';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,14 +25,18 @@ import { PostAndSpinnerComponent } from './post-and-spinner/post-and-spinner.com
     PostsComponent,
     SpinnerComponent,
     SecondComponentComponent,
-    PostAndSpinnerComponent
+    PostAndSpinnerComponent,
+    SecondaComponent,
+    LoginComponent
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    FormsModule
   ],
   providers: [PostService,{provide:HTTP_INTERCEPTORS,useClass:SpinnerHttpInterceptor,multi:true}],
   bootstrap: [AppComponent]
